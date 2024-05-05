@@ -1,0 +1,87 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:GradeMaster5.Views"
+             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+             x:Class="GradeMaster5.Views.MainWindow"
+             Title="GradeMaster Login">
+        
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="220"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <StackLayout VerticalOptions="Start" HorizontalOptions="Center">
+            <Frame
+                Margin="10"
+                Padding="0"
+                BackgroundColor="SkyBlue"
+                CornerRadius="30"
+                Height="120"
+                Width="120">
+                <Image
+                    Source="logo.png" 
+                    Aspect="AspectFill"/>
+            </Frame>
+        </StackLayout>
+
+        <Grid
+            Grid.Row="1"
+            Margin="50"
+            RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label
+                Grid.Row="0"
+                FontSize="24"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="Welcome to GradeMaster"/>
+            <Label
+                Grid.Row="1"
+                FontSize="18"
+                HorizontalOptions="Center"
+                Text="Sign in to Continue"/>
+            <StackLayout
+                Grid.Row="2"
+                Margin="0,20,0,0"
+                HorizontalOptions="Center"
+                Orientation="Vertical"
+                Width="300">
+                <material:TextField
+                    Margin="0,0,0,10"
+                    FontSize="14"
+                    Title="Enter Username"
+                    Text="{Binding Username}"
+                    Style="{StaticResource MaterialEntry}" />
+
+                <material:TextField
+                    Margin="0,0,0,10"
+                    FontSize="14"
+                    Title="Enter Password"
+                    Text="{Binding Password}"
+                    IsPassword="True"
+                    Style="{StaticResource MaterialEntry}" />   
+
+                <Button
+                    Margin="0,20,0,0"
+                    Background="SkyBlue"
+                    Command="{Binding LoginCommand}"
+                    Text="SIGN IN"
+                    FontSize="14"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    Height="40"
+                    Width="200"/>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
